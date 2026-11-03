@@ -1,4 +1,5 @@
 import HookCard from '@/components/HookCard';
+import Hero from '@/components/Hero';
 import { Hook } from '@/types/hook';
 import hooksData from '@/data/hooks.json';
 
@@ -48,26 +49,7 @@ export default function Home() {
       </header>
 
       <main className="max-w-6xl mx-auto px-6 lg:px-8">
-        {/* Hero Section */}
-        <section className="py-20 md:py-28">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-[var(--foreground)] mb-6 leading-[1.1] tracking-tight">
-              Extend Claude Code with
-              <span className="text-[#d97757]"> powerful hooks</span>
-            </h1>
-            <p className="text-lg md:text-xl text-[var(--slate-light)] mb-10 leading-relaxed max-w-2xl">
-              Discover community-driven hooks that enhance your AI-powered development workflows. Automate, validate, and customize how Claude Code works for you.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <button className="px-6 py-3 bg-[#d97757] hover:bg-[#c4684a] text-white font-medium rounded-xl transition-colors duration-200">
-                Browse Hooks
-              </button>
-              <button className="px-6 py-3 border border-[var(--border)] hover:border-[var(--slate-light)] text-[var(--foreground)] font-medium rounded-xl transition-colors duration-200">
-                Submit a Hook
-              </button>
-            </div>
-          </div>
-        </section>
+        <Hero hooks={hooks} />
 
         {/* Featured Hooks */}
         {featuredHooks.length > 0 && (
@@ -87,7 +69,7 @@ export default function Home() {
         )}
 
         {/* All Hooks */}
-        <section className="pb-20">
+        <section id="all-hooks" className="pb-20 scroll-mt-24">
           <div className="flex items-center gap-3 mb-8">
             <div className="w-1 h-6 bg-[var(--slate-light)] rounded-full"></div>
             <h2 className="text-xl font-semibold text-[var(--foreground)]">
